@@ -31,3 +31,6 @@ loss, accuracy = model.evaluate(data["X_test"], data["y_test"], verbose=0)
 print(f"Loss: {loss:.4f}")
 print(f"Accuracy: {accuracy*100:.2f}%")
 
+
+
+
