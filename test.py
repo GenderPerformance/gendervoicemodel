@@ -62,11 +62,11 @@ def add_silence(snd_data, seconds):
 
 def record():
     """
-    Record a word or words from the microphone and 
+    Record a word or words from the microphone and
     return the data as an array of signed shorts.
-    Normalizes the audio, trims silence from the 
-    start and end, and pads with 0.5 seconds of 
-    blank sound to make sure VLC et al can play 
+    Normalizes the audio, trims silence from the
+    start and end, and pads with 0.5 seconds of
+    blank sound to make sure VLC et al can play
     it without getting chopped off.
     """
     p = pyaudio.PyAudio()
@@ -164,7 +164,7 @@ if __name__ == "__main__":
     # model = pickle.load(open("result/mlp_classifier.model", "rb"))
     from utils import load_data, split_data, create_model
     import argparse
-    parser = argparse.ArgumentParser(description="""Gender recognition script, this will load the model you trained, 
+    parser = argparse.ArgumentParser(description="""Gender recognition script, this will load the model you trained,
                                     and perform inference on a sample you provide (either using your voice or a file)""")
     parser.add_argument("-f", "--file", help="The path to the file, preferred to be in WAV format")
     args = parser.parse_args()
@@ -187,5 +187,10 @@ if __name__ == "__main__":
     female_prob = 1 - male_prob
     gender = "male" if male_prob > female_prob else "female"
     # show the result!
-    print("Result:", gender)
+    #print("Result:", gender)
     print(f"Probabilities:     Male: {male_prob*100:.2f}%    Female: {female_prob*100:.2f}%")
+
+
+
+
+
